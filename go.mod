@@ -3,8 +3,13 @@ module jobin
 go 1.23.0
 
 require (
-	github.com/a-h/templ v0.2.771 // indirect
-	github.com/gofiber/fiber/v2 v2.52.5 // indirect
+	github.com/a-h/templ v0.2.771
+	github.com/gofiber/fiber/v2 v2.52.5
+)
+
+require (
+	gorm.io/driver/sqlite v1.5.6
+	gorm.io/gorm v1.25.11
 )
 
 require (
@@ -23,6 +28,4 @@ require (
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	golang.org/x/sys v0.23.0 // indirect
 	golang.org/x/text v0.17.0 // indirect
-	gorm.io/driver/sqlite v1.5.6 // indirect
-	gorm.io/gorm v1.25.11 // indirect
 )

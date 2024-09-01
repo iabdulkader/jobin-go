@@ -23,6 +23,5 @@ build: templ
 
 init:
 	$(package_manager) install
-	cp ./node_modules/preline/dist/preline.js ./static/js/preline.js
 
 

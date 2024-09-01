@@ -6,6 +6,9 @@ components/*.go
 components/*.txt
 
 .vscode
-jobin
 .version
+
 paste.db
+
+jobin
+main
