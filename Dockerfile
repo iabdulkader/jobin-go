@@ -31,6 +31,7 @@ WORKDIR /app
 # Set Go proxy environment variable
 ENV GOPROXY=https://proxy.golang.org
 
+
 # Copy go.mod and go.sum and download Go dependencies
 COPY go.mod go.sum ./
 RUN go mod tidy
@@ -55,7 +56,7 @@ COPY --from=frontend-builder /app ./
 RUN go build -o jobin cmd/server/main.go
 
 # Stage 3: Run the Go application
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Set the working directory
 WORKDIR /app
