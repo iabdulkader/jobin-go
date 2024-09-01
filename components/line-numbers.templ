@@ -1,0 +1,20 @@
+package components
+
+import (
+    "strconv"
+)
+
+func intToString(number int) string {
+    return strconv.Itoa(number)
+}
+
+templ LineNubers(lines []int) {
+    
+    <div class="flex flex-col w-full ">
+        for _, item := range lines {
+            <div>
+                { intToString(item) }
+            </div>
+        }
+    </div>
+}

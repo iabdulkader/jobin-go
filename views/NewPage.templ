@@ -1,0 +1,22 @@
+package views
+
+import (
+	"jobin/components"
+)
+
+templ NewPage(content string) {
+    @Page("New Paste ") {
+        
+        @components.HeaderComponent(components.NewPasteButtons())
+        
+      <div class="flex w-full h-[calc(100vh-3.5rem)] bg-custom-body">
+        
+            if content != "" {
+                @components.Editor(content, true)
+            } else {
+                @components.Editor("", true)
+            }
+        </div>
+    
+    }
+}

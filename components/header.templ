@@ -1,0 +1,17 @@
+package components 
+
+
+templ HeaderComponent(buttonContainer templ.Component ) {
+    <header class="bg-custom-gray w-full h-14 text-white flex items-center justify-between px-4 lg:px-6">
+        <div>
+            <a href="/" class="text-2xl font-medium">jobin</a>
+        </div>
+
+    
+       if buttonContainer != nil {
+            <div class="h-full flex items-center">
+                @buttonContainer
+            </div>
+        }
+    </header>
+}

@@ -1,0 +1,18 @@
+package views
+
+import (
+	"jobin/components"
+)
+
+templ SavedPaste(content string, slug string) {
+    @Page("New Paste ") {
+        
+        @components.HeaderComponent(components.SavedPasteButtons(slug))
+        
+      <div class="flex w-full h-[calc(100vh-3.5rem)] bg-custom-body">
+        
+            @components.Editor(content, false)
+        </div>
+    
+    }
+}

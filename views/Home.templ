@@ -1,0 +1,17 @@
+package views
+
+import (
+	"jobin/components"
+)
+
+templ Home(t string) {
+
+    @Page("Home") {
+        @components.HeaderComponent(components.NewBinButton())
+        
+        <div class="flex w-full h-[calc(100vh-3.5rem)] bg-custom-body">
+        
+            @components.Editor("Hey Dude 🙂\nWhat's Up,\nI am a pastebin.\nGive Me something I will store that\nAnd provide you your text's Share link\nI also support code highlighting", false)
+        </div>
+    }
+}   

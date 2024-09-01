@@ -1,0 +1,66 @@
+package components
+
+import (
+	"strings"
+)
+
+
+func countLines(text string) []int {
+    lines := strings.Split(text, "\n")
+
+    lineNumbers := make([]int, len(lines))
+
+    for i := 0; i < len(lines); i++ {
+        lineNumbers[i] = i + 1
+    }
+
+    return lineNumbers
+}
+
+
+
+templ Editor(data string, editable bool ) {
+    <div class="flex items-start min-h-full overflow-auto gap-x-2 w-full">
+        <div 
+        
+        class="w-auto min-h-full overflow-hidden flex-shrink-0 text-sm bg-gray-800 pl-3 pr-2 py-3.5 text-white">
+          if editable {
+             <div>></div>
+          } else {
+             @LineNubers(countLines(data))
+          }
+        </div>
+        <div class="w-full">
+        if editable {
+             <form class="flex py-[0.85rem] overflow-y-hidden overflow-x-auto min-h-[calc(100dvh-3.5rem)] w-full">
+             <textarea 
+             id="new-paste-form"
+            name="content"
+             class="w-full text-sm h-auto border-none bg-transparent outline-none  resize-none text-white" autofocus >{data}</textarea>
+             
+             </form>
+          } else {
+            <pre><code
+            id="new-paste-form"
+             class="text-sm p-0">{data}</code></pre>
+           
+          }
+            
+        </div>
+
+        <script>
+          document.onload = function() {
+            if(locals?.language) {
+              const element = document.getElementById("new-paste-form");
+
+              if(element) { 
+                element.classList.add("language-" + locals?.language);
+              }
+            }
+          }
+        
+        </script>
+    </div>
+}
+
+

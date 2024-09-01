@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "dank-mono";
+  src: url("/font/DankMono-Regular.ttf") format("truetype"); /* Fallback for older browsers */
+  font-weight: normal;
+  font-style: normal;
+}
