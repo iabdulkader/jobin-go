@@ -64,6 +64,8 @@ WORKDIR /app
 # Copy the built Go binary from the go-builder stage
 COPY --from=go-builder /app/jobin /app/jobin
 
+COPY --from=go-builder /app/static /app/static
+
 # Expose the application's port
 EXPOSE 3000
 
